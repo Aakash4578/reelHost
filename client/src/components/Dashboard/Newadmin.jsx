@@ -1,5 +1,6 @@
 import React, { useState } from 'react'; 
 import axios from 'axios';
+import API from '../../api'; //✅ import your base API URL//
 
 function Register() {
   const [email, setEmail] = useState('');
@@ -9,7 +10,7 @@ function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/register', { email, password });
+      const res = await axios.post(`${API}http://localhost:5000/api/register`, { email, password });
       setMsg(res.data.message);
       localStorage.setItem('token', res.data.token);
     } catch (err) {

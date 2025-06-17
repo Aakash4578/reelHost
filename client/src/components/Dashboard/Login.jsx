@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import API from '../../api'; //✅ import your base API URL//
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -38,7 +38,7 @@ function Login() {
     try {
       setLoading(true);
       setMsg('');
-      const res = await axios.post('http://localhost:5000/api/login', { email, password });
+      const res = await axios.post(`${API}/api/login`, { email, password });
       setMsg(res.data.message);
       localStorage.setItem('token', res.data.token);
       navigate('/dashboard');

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import API from '../../api'; //✅ import your base API URL//
 
 const VideoGallery = () => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/videos')
+    axios.get(`${API}/api/videos`)
       .then(res => setVideos(res.data))
       .catch(err => console.log(err));
   }, []);

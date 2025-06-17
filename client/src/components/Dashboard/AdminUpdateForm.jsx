@@ -1,6 +1,8 @@
 // AdminUpdateForm.jsx
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import API from '../../api'; //✅ import your base API URL//
+
 
 const AdminUpdateForm = () => {
   const [admin, setAdmin] = useState({ email: "" });
@@ -16,7 +18,7 @@ const AdminUpdateForm = () => {
     }
 
     axios
-      .get("http://localhost:5000/api/admin", {
+      .get(`${API}http://localhost:5000/api/admin`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setAdmin({ email: res.data.email }))
@@ -35,7 +37,7 @@ const AdminUpdateForm = () => {
 
     try {
       const res = await axios.put(
-        "http://localhost:5000/api/admin",
+        `${API}/api/admin`,
         { email: admin.email, currentPassword, newPassword },
         { headers: { Authorization: `Bearer ${token}` } }
       );

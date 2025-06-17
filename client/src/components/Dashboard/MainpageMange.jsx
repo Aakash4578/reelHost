@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AddCategory from './AddCategory';
 import AddMainPageVideo from './AddMainPageVideo';
+import API from '../../api'; //✅ import your base API URL//
 
-const API_URL = 'http://localhost:5000/api/videos'; // Replace with your actual API URL
+const API_URL = `${API}/api/videos`; // Replace with your actual API URL
 
 function MainpageMange() {
   const [videos, setVideos] = useState([]);

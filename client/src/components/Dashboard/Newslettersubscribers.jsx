@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import API from '../../api';
 
 function NewsletterSubscribers() {
   const [subscribers, setSubscribers] = useState([]);
@@ -7,7 +8,7 @@ function NewsletterSubscribers() {
 
   const fetchSubscribers = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/newsletter/all');
+      const res = await axios.get(`${API}/api/newsletter/all`);
       setSubscribers(res.data);
     } catch (err) {
       setMsg('Error fetching subscribers');
@@ -16,7 +17,7 @@ function NewsletterSubscribers() {
 
   const deleteSubscriber = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/newsletter/delete/${id}`);
+      await axios.delete(`${API}/api/newsletter/delete/${id}`);
       setMsg('Subscriber deleted');
       fetchSubscribers(); // Refresh after deletion
     } catch (err) {

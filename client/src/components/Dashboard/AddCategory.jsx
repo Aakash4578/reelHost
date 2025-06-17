@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Table, Button, Modal, Form } from 'react-bootstrap';
+import API from '../../api'; //✅ import your base API URL//
 
 const AddCategory = () => {
   const [categories, setCategories] = useState([]);
@@ -14,7 +15,7 @@ const AddCategory = () => {
   }, []);
 
   const fetchCategories = async () => {
-    const res = await axios.get('http://localhost:5000/api/mainpagecategory');
+    const res = await axios.get(`${API}/api/mainpagecategory`);
     setCategories(res.data);
   };
 
@@ -41,10 +42,10 @@ const AddCategory = () => {
     e.preventDefault();
     if (editId) {
       // Update
-      await axios.put(`http://localhost:5000/api/mainpagecategory/${editId}`, form);
+      await axios.put(`${API}/api/mainpagecategory/${editId}`, form);
     } else {
       // Create
-      await axios.post('http://localhost:5000/api/mainpagecategory', form);
+      await axios.post(`${API}/api/mainpagecategory`, form);
     }
     setShowModal(false);
     fetchCategories();
@@ -53,7 +54,7 @@ const AddCategory = () => {
   // Delete category
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure to delete?')) {
-      await axios.delete(`http://localhost:5000/api/mainpagecategory/${id}`);
+      await axios.delete(`${API}/api/mainpagecategory/${id}`);
       fetchCategories();
     }
   };
@@ -132,3 +133,4 @@ const AddCategory = () => {
 };
 
 export default AddCategory;
+// 

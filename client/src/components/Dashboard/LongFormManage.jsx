@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import API from '../../api'; //✅ import your base API URL//
 
 function VideoManager() {
   const [videos, setVideos] = useState([]);
@@ -7,7 +8,7 @@ function VideoManager() {
   const [editingId, setEditingId] = useState(null);
 
   const fetchVideos = async () => {
-    const res = await axios.get('http://localhost:5000/api/longpage');
+    const res = await axios.get(`${Api}/api/longpage`);
     setVideos(res.data);
   };
 
@@ -18,9 +19,9 @@ function VideoManager() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (editingId) {
-      await axios.put(`http://localhost:5000/api/longpage/${editingId}`, form);
+      await axios.put(`${API}/api/longpage/${editingId}`, form);
     } else {
-      await axios.post('http://localhost:5000/api/longpage', form);
+      await axios.post(`${API}/api/longpage`, form);
     }
     setForm({ title: '', youtubeId: '', description: '' });
     setEditingId(null);
@@ -29,7 +30,7 @@ function VideoManager() {
   };
 
   const deleteVideo = async (id) => {
-    await axios.delete(`http://localhost:5000/api/longpage/${id}`);
+    await axios.delete(`${Api}/api/longpage/${id}`);
     fetchVideos();
   };
 

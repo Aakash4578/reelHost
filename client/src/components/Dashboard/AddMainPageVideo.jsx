@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import API from '../../api'; //✅ import your base API URL//
 
 function MainPageVideoAdmin() {
   const [title, setTitle] = useState('');
@@ -15,21 +16,20 @@ function MainPageVideoAdmin() {
     fetchCategories();
     fetchVideos();
   }, []);
-
   const fetchCategories = async () => {
-    const res = await axios.get('http://localhost:5000/api/mainpagecategory');
+    const res = await axios.get(`${API}/api/mainpagecategory`);
     setCategories(res.data);
   };
 
   const fetchVideos = async () => {
-    const res = await axios.get('http://localhost:5000/api/mainpagevideos');
+    const res = await axios.get(`${API}/api/mainpagevideos`);
     setVideos(res.data);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/mainpagevideos', {
+      await axios.post(`${API}/api/mainpagevideos`, {
         title,
         videoId,
         category: categoryId,
@@ -45,14 +45,14 @@ function MainPageVideoAdmin() {
 
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure to delete this video?')) {
-      await axios.delete(`http://localhost:5000/api/mainpagevideos/${id}`);
+      await axios.delete(`${API}/api/mainpagevideos/${id}`);
       fetchVideos();
     }
   };
 
   const openEditModal = async (id) => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/mainpagevideos/${id}`);
+      const res = await axios.get(`${API}/api/mainpagevideos/${id}`);
       const video = res.data;
       setTitle(video.title);
       setVideoId(video.videoId);
@@ -67,7 +67,7 @@ function MainPageVideoAdmin() {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/mainpagevideos/${editId}`, {
+      await axios.put(`${API}/api/mainpagevideos/${editId}`, {
         title,
         videoId,
         category: categoryId,

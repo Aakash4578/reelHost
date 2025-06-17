@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import API from '../../api'; //✅ import your base API URL//
 
 const UgcVideoManager = () => {
   const [videos, setVideos] = useState([]);
   const [formData, setFormData] = useState({ title: '', youtubeId: '', _id: '' });
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const API_URL = 'http://localhost:5000/api/ugcpage';
+  const API_URL = `${API}http://localhost:5000/api/ugcpage`;
 
   useEffect(() => {
     fetchVideos();

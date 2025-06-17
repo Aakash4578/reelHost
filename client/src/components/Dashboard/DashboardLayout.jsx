@@ -4,6 +4,8 @@ import AdminUpdateForm from './AdminUpdateForm';
 import AdminRegister from './AdminRegister';
 import { Outlet, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import API from '../../api'; //✅ import your base API URL//
+
 
 function DashboardLayout() {
   const [collapsed, setCollapsed] = useState(false);
@@ -22,7 +24,7 @@ function DashboardLayout() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      axios.get("http://localhost:5000/api/admin", {
+      axios.get(`${API}/api/admin`, {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then(res => setAdmin(res.data)) // set full data
