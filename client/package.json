@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
+  "dev": "vite",
+  "build": "chmod +x node_modules/.bin/vite && vite build",
+  "preview": "vite preview"
+},
+  
   "dependencies": {
     "@calcom/embed-react": "^1.5.2",
     "@splidejs/splide": "^4.1.4",
