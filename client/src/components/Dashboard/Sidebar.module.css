@@ -1,0 +1,84 @@
+/* Sidebar Styles */
+.sidebar {
+  height: 100vh;
+  background-color:#ffffff;
+  color: #000000;
+  position: fixed;
+  width: 250px;
+  transition: all 0.3s ease;
+  padding: 20px;
+}
+.sidebar.collapsed {
+  width: 80px;
+}
+.sidebar .nav-link {
+  color: #f8f4f4;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+
+.sidebar .nav-link:hover {
+  background-color: #495057;
+}
+.sidebar i {
+  margin-right: 10px;
+}
+
+/* Header */
+.header {
+  height: 60px;
+  background-color:#8458EE;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 250px;
+  transition: margin-left 0.3s ease;
+}
+.header.collapsed {
+  margin-left: 80px;
+}
+
+/* Main Content */
+.mainContent {
+  margin-left: 250px;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+.mainContent.collapsed {
+  margin-left: 80px;
+}
+
+/* Table Container */
+.tableContainer {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Dropdown */
+.profileDropdown {
+  position: relative;
+}
+.dropdownMenu {
+  right: 0;
+  left: auto;
+}
+
+/* Toggle */
+.toggleBtn {
+  cursor: pointer;
+}
+
+/* Utility */
+.dFlex {
+  display: flex;
+  align-items: center;
+}
+.me3 {
+  margin-right: 1rem;
+}
