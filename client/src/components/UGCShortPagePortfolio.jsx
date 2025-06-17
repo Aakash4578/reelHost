@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import style from '../assets/Css/shortpage.module.css';
-
+import API from '../api';
 const UGCShortPagePortfolio = () => {  // <-- fixed function declaration
   const [videos, setVideos] = useState([]);
-  const API_URL = 'http://localhost:5000/api/ugcpage';
+  const API_URL = `${API}/api/ugcpage`;
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [showAll, setShowAll] = useState(false);

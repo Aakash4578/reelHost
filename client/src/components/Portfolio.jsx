@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
-
+import API from '../api';
 function Portfolio() {
   const [videos, setVideos] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -24,7 +24,7 @@ function Portfolio() {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/mainpagecategory');
+      const res = await axios.get(`${API}/api/mainpagecategory`);
       setCategories(res.data);
     } catch (err) {
       console.error(err);
@@ -33,7 +33,7 @@ function Portfolio() {
 
   const fetchVideos = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/mainpagevideos');
+      const res = await axios.get(`${API}/api/mainpagevideos`);
       setVideos(res.data);
     } catch (err) {
       console.error(err);

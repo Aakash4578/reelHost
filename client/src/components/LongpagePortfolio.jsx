@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import style from '../assets/Css/Longpage.module.css';
-
+import API from '../api';
 function LongpagePortfolio() {
   const [showAll, setShowAll] = useState(false);
   const [playingVideo, setPlayingVideo] = useState(null);
@@ -10,7 +10,7 @@ function LongpagePortfolio() {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/longpage');
+        const res = await axios.get(`${API}/api/longpage`);
         // Map API data according to your admin panel video structure
         const data = res.data.map(item => ({
           id: item._id,

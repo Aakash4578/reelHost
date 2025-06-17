@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import logo from '/assets/img/logo/logo.png';
-
+import API from '../api';
 function Footer() {
   const [email, setEmail] = useState('');
   const [msg, setMsg] = useState('');
@@ -9,7 +9,7 @@ function Footer() {
   const handleSubscribe = async () => {
     if (!email) return setMsg('Email is required');
     try {
-      const res = await axios.post('http://localhost:5000/api/newsletter/subscribe', { email });
+      const res = await axios.post(`${API}/api/newsletter/subscribe`, { email });
       setMsg(res.data.message);
       setEmail('');
     } catch (err) {

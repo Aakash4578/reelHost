@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import style from '../assets/Css/shortpage.module.css';
-
-const API_URL = 'http://localhost:5000/api/shortvideos';
+import API from '../api';
+const API_URL = `${API}/api/shortvideos`;
 
 function ShortPagePortfolio() {
   const [videos, setVideos] = useState([]);
