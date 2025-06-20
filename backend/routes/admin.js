@@ -51,3 +51,34 @@ router.put("/", verifyToken, async (req, res) => {
 });
 
 module.exports = router;
+// 
+
+// ✅ Add this Register Route
+router.post("/register", async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    // Check if admin already exists
+    const existingAdmin = await Admin.findOne({ email });
+    if (existingAdmin) {
+      return res.status(400).json({ error: "Admin already exists" });
+    }
+
+    // Hash password
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Create new admin
+    const newAdmin = new Admin({
+      email,
+      password: hashedPassword,
+    });
+
+    await newAdmin.save();
+
+    res.status(201).json({ message: "Admin registered successfully" });
+  } catch (err) {
+    console.error("Register error:", err);
+    res.status(500).json({ error: "Server error during registration" });
+  }
+});
+
