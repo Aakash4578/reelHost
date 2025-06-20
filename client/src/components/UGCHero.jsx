@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'; // ✅ Import useEffect
 import logo from '/assets/img/logo/logo.png';
 import style from '../assets/Css/Shortpage.module.css';
+import { NavbarBrand } from 'react-bootstrap';
 
-function UGCHero() {
+function ShortpageHero() {
   useEffect(() => {
     document.body.style.backgroundColor = "#000";
     document.body.style.color = "#fff";
@@ -24,13 +25,13 @@ function UGCHero() {
   return (
     <>
       <nav className={`${style.navbar} navbar-expand-lg d-flex align-items-center justify-content-center mt-5`}>
-        <a className="navbar-brand" href="#">
+        <a className={`${style.NavbarBrand}`} href="#">
           <img src={logo} alt="Logo" className="img-fluid" loading="lazy" />
         </a>
       </nav>
       <div className={`${style.banercon} text-center container`}>
         <h1 className="fw-bold">Supercharge your brand with</h1>
-        <h2 className="highlight">viral UGC  content</h2>
+        <h2 className="highlight">viral short-form content</h2>
         <p>
           If you're a busy creator looking to grow your brand, we craft short-form content
           <br className="br" />
@@ -47,4 +48,4 @@ function UGCHero() {
   );
 }
 
-export default UGCHero;
+export default ShortpageHero;

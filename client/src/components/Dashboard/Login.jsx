@@ -1,53 +1,53 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import API from '../../api'; //✅ import your base API URL//
-function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [msg, setMsg] = useState('');
-  const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
+  import { useState, useEffect } from 'react';
+  import axios from 'axios';
+  import { useNavigate } from 'react-router-dom';
+  import API from '../../api'; //✅ import your base API URL//
+  function Login() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [msg, setMsg] = useState('');
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
-  // Auto redirect if already logged in
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      navigate('/dashboard');
-    }
-  }, [navigate]);
+    // Auto redirect if already logged in
+    useEffect(() => {
+      const token = localStorage.getItem('token');
+      if (token) {
+        navigate('/dashboard');
+      }
+    }, [navigate]);
 
-  const validateEmail = (email) => {
-    // Simple email regex validation
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  };
+    const validateEmail = (email) => {
+      // Simple email regex validation
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    };
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
+    const handleLogin = async (e) => {
+      e.preventDefault();
 
-    // Basic frontend validation
-    if (!validateEmail(email)) {
-      setMsg('Please enter a valid email address.');
-      return;
-    }
-    if (password.length < 6) {
-      setMsg('Password must be at least 6 characters.');
-      return;
-    }
+      // Basic frontend validation
+      if (!validateEmail(email)) {
+        setMsg('Please enter a valid email address.');
+        return;
+      }
+      if (password.length < 6) {
+        setMsg('Password must be at least 6 characters.');
+        return;
+      }
 
-    try {
-      setLoading(true);
-      setMsg('');
-      const res = await axios.post(`${API}/api/login`, { email, password });
-      setMsg(res.data.message);
-      localStorage.setItem('token', res.data.token);
-      navigate('/dashboard');
-    } catch (err) {
-      setMsg(err.response?.data?.error || 'Login failed');
-    } finally {
-      setLoading(false);
-    }
-  };
+      try {
+        setLoading(true);
+        setMsg('');
+        const res = await axios.post(`${API}/api/login`, { email, password });
+        setMsg(res.data.message);
+        localStorage.setItem('token', res.data.token);
+        navigate('/dashboard');
+      } catch (err) {
+        setMsg(err.response?.data?.error || 'Login failed');
+      } finally {
+        setLoading(false);
+      }
+    };
 
   return (
     <>

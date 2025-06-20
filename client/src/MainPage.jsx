@@ -29,6 +29,7 @@ function MainPage() {
 
   return (
     <>
+    
       <Navbar />
       <Hero />
       <Portfolio />
