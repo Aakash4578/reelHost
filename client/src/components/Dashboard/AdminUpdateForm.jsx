@@ -18,7 +18,7 @@ const AdminUpdateForm = () => {
     }
 
     axios
-      .get(`${API}http://localhost:5000/api/admin`, {
+      .get(`${API}/api/admin`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setAdmin({ email: res.data.email }))

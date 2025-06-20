@@ -9,7 +9,7 @@ function RegisterModal({ show, onClose }) {
     e.preventDefault();
     setMsg(`Registered successfully with email: ${email}`);
     setEmail('');
-    setPassword('');
+    setPassword('');  
   };
 
   if (!show) return null;
