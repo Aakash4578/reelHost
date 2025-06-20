@@ -1,14 +1,15 @@
-// AdminUpdateForm.jsx
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import API from '../../api'; //✅ import your base API URL//
-
+import API from '../../api';
 
 const AdminUpdateForm = () => {
   const [admin, setAdmin] = useState({ email: "" });
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [message, setMessage] = useState("");
+
+  const [showCurrentPass, setShowCurrentPass] = useState(false);
+  const [showNewPass, setShowNewPass] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -96,26 +97,49 @@ const AdminUpdateForm = () => {
                   required
                 />
               </div>
+
+              {/* ✅ Current Password with eye icon */}
               <div className="mb-3">
                 <label className="fw-semibold text-black">Current Password:</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  value={currentPassword}
-                  onChange={(e) => setCurrentPassword(e.target.value)}
-                  required
-                />
+                <div className="input-group">
+                  <input
+                    type={showCurrentPass ? "text" : "password"}
+                    className="form-control"
+                    value={currentPassword}
+                    onChange={(e) => setCurrentPassword(e.target.value)}
+                    required
+                  />
+                  <button
+                    type="button"
+                    className="btn btn-outline-secondary"
+                    onClick={() => setShowCurrentPass(!showCurrentPass)}
+                  >
+                    <i className={`fa ${showCurrentPass ? "fa-eye-slash" : "fa-eye"}`}></i>
+                  </button>
+                </div>
               </div>
+
+              {/* ✅ New Password with eye icon */}
               <div className="mb-3">
                 <label className="fw-semibold text-black">New Password (optional):</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  value={newPassword}
-                  onChange={(e) => setNewPassword(e.target.value)}
-                />
+                <div className="input-group">
+                  <input
+                    type={showNewPass ? "text" : "password"}
+                    className="form-control"
+                    value={newPassword}
+                    onChange={(e) => setNewPassword(e.target.value)}
+                  />
+                  <button
+                    type="button"
+                    className="btn btn-outline-secondary"
+                    onClick={() => setShowNewPass(!showNewPass)}
+                  >
+                    <i className={`fa ${showNewPass ? "fa-eye-slash" : "fa-eye"}`}></i>
+                  </button>
+                </div>
               </div>
             </div>
+
             <div className="modal-footer">
               <button
                 type="button"
