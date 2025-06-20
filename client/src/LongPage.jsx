@@ -6,6 +6,8 @@ import Testimonials from './components/Testimonials';
 import Candly from './components/Candly';
 import Faq from './components/Faq';
 import Footer from './components/Footer';
+import './assets/Css/Mainpage.css';
+
 
 
 function LongPage() {
@@ -13,13 +15,13 @@ function LongPage() {
 
     <>
     
-      <LongpageHero></LongpageHero>
-      <LongpagePortfolio></LongpagePortfolio>
-    <DemoAndBook_Cards></DemoAndBook_Cards>
-    <Testimonials></Testimonials>
-    <Candly></Candly>
-    <Faq></Faq>
-    <Footer></Footer>
+    <LongpageHero/>
+    <LongpagePortfolio/>
+    <DemoAndBook_Cards />
+    <Testimonials/>
+    <Candly/>
+    <Faq/>
+    <Footer/>
     
          </>
 )

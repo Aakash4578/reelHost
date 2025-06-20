@@ -84,8 +84,8 @@ body {
   }
   
   .navbar-nav .nav-link:hover {
-    background-color: red;
-    border-radius: 5px;
+    font-size: 15.5px;
+    color:white;
   }
   
   /* Sidebar */

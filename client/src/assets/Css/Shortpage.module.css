@@ -465,10 +465,10 @@ font-display: swap;
 .prisec .card {
   background-color: transparent;
   border-radius: 15px;
-  border:#adacac 1px solid;
+  border:#adacac86 1px solid;
   color: var(--text-color);
   padding: 20px;
-}
+transition: filter 1s ease-in-out, transform 0.2s ease;}
 .prisec .card-inner {
   border: none !important;
   color: var(--text-color);
@@ -476,6 +476,7 @@ font-display: swap;
 }
 .prisec .card.highlight {
   background-color:var(--prcardheighlight-bgcolor);
+  justify-content: center;
 }
 .prisec .card h2 {
   font-size: 2rem;
@@ -512,7 +513,49 @@ min-width: 100%;
 }
 .prisec .card ul li {
   margin: 6px 0;
+  font-size: 16px;
 }
+.prisec .card ul .lii {
+  margin: 6px 0;
+  background-color: #111; /* black bg */
+  color: white;
+  padding: 10px 15px 10px 20px; /* left padding for space */
+  position: relative;
+  border-radius: 8px;
+}
+
+
+.prisec .card ul .lii {
+  margin: 6px 0;
+  background: #020024;
+  background: linear-gradient(268deg,rgba(0, 0, 0, 0) 39%, rgb(92, 92, 92) 100%);  color: white;
+
+  padding: 10px 15px 10px 20px;
+  position: relative;
+  border-radius: 8px;
+}
+
+.prisec .card ul .lii::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px 0 0 8px;
+  box-shadow: 0 0 22px white; /* 🔥 glow effect */
+}
+
+.blur {
+filter: blur(4px);
+  transform: scale(0.98);
+  pointer-events: none; /* optional: disables hover on blurred cards */
+}
+
+
+
+
 .prisec .card .inclu{
 color: #6a6a6a;
 font-size: 14px;
@@ -566,7 +609,11 @@ text-align: right;
   z-index: 2;
   }
   
-  
+  .noteplan{
+    font-size: 14px;
+    font-style: italic;
+    color: #b9b7b7;
+  }
   
   
   
@@ -700,7 +747,7 @@ text-align: right;
   }
 
   .prisec .card ul {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .prisec .card .hielite,

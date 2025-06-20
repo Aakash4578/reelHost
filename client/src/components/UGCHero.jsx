@@ -31,7 +31,7 @@ function UGCHero() {
       </nav>
       <div className={`${style.banercon} text-center container`}>
         <h1 className="fw-bold">Supercharge your brand with</h1>
-        <h2 className="highlight">viral UGC  content</h2>
+        <h2 className="highlight">viral ugc  content</h2>
         <p>
          If you're a busy creator looking to grow your brand, we craft short-form content
           <br className="br" />

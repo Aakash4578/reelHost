@@ -7,6 +7,7 @@ function RegisterModal({ show, onClose }) {
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState("");
   const [error, setError] = useState("");
+  const [showPass, setShowPass] = useState(false); // 👁️ state to toggle password
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -62,6 +63,8 @@ function RegisterModal({ show, onClose }) {
                   required
                 />
               </div>
+
+              {/* ✅ Password with Eye Icon */}
               <div className="mb-3">
                 <label
                   htmlFor="password"
@@ -69,15 +72,29 @@ function RegisterModal({ show, onClose }) {
                 >
                   Password
                 </label>
-                <input
-                  type="password"
-                  className="form-control"
-                  id="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
+                <div className="input-group">
+                  <input
+                    type={showPass ? "text" : "password"}
+                    className="form-control"
+                    id="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
+                  <button
+                    type="button"
+                    className="btn btn-outline-secondary"
+                    onClick={() => setShowPass(!showPass)}
+                  >
+                    <i
+                      className={`fa-solid ${
+                        showPass ? "fa-eye-slash" : "fa-eye"
+                      }`}
+                    ></i>
+                  </button>
+                </div>
               </div>
+
               <button type="submit" className="btn btn-primary w-100">
                 Register
               </button>
