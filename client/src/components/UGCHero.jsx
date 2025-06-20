@@ -3,7 +3,7 @@ import logo from '/assets/img/logo/logo.png';
 import style from '../assets/Css/Shortpage.module.css';
 import { NavbarBrand } from 'react-bootstrap';
 
-function ShortpageHero() {
+function UGCHero() {
   useEffect(() => {
     document.body.style.backgroundColor = "#000";
     document.body.style.color = "#fff";
@@ -31,9 +31,9 @@ function ShortpageHero() {
       </nav>
       <div className={`${style.banercon} text-center container`}>
         <h1 className="fw-bold">Supercharge your brand with</h1>
-        <h2 className="highlight">viral short-form content</h2>
+        <h2 className="highlight">viral UGC  content</h2>
         <p>
-          If you're a busy creator looking to grow your brand, we craft short-form content
+         If you're a busy creator looking to grow your brand, we craft short-form content
           <br className="br" />
           that grabs attention and drives results.
         </p>
@@ -48,4 +48,4 @@ function ShortpageHero() {
   );
 }
 
-export default ShortpageHero;
+export default UGCHero;;
