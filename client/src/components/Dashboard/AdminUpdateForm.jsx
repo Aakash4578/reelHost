@@ -114,7 +114,7 @@ const AdminUpdateForm = () => {
                     className="btn btn-outline-secondary"
                     onClick={() => setShowCurrentPass(!showCurrentPass)}
                   >
-                    <i className={`fa ${showCurrentPass ? "fa-eye-slash" : "fa-eye"}`}></i>
+                    <i className={`fa-solid ${showCurrentPass ? "fa-eye-slash" : "fa-eye"}`}></i>
                   </button>
                 </div>
               </div>
@@ -134,7 +134,7 @@ const AdminUpdateForm = () => {
                     className="btn btn-outline-secondary"
                     onClick={() => setShowNewPass(!showNewPass)}
                   >
-                    <i className={`fa ${showNewPass ? "fa-eye-slash" : "fa-eye"}`}></i>
+                    <i className={`fa-solid ${showNewPass ? "fa-eye-slash" : "fa-eye"}`}></i>
                   </button>
                 </div>
               </div>
