@@ -7,10 +7,10 @@ function Whychooseus() {
     <>
       <section>
         {/* whysection */}
-        <div className="whysection">
-          <div className="title mb-4">Why Clients Trust Us</div>
-          <div className="comparison">
-            <div className="box left-box">
+        <div className="whysection" >
+          <div className="title mb-4"  data-aos="fade-up">Why Clients Trust Us</div>
+          <div className="comparison"   >
+            <div className="box left-box" data-aos="fade-up">
               <div className="subtitle">Others</div>
               <ul>
                 <li>Generic, basic edits</li>
@@ -19,7 +19,7 @@ function Whychooseus() {
                 <li>Fixed, rigid plans</li>
               </ul>
             </div>
-            <div className="box right-box">
+            <div className="box right-box" data-aos="fade-up">
               <div className="subtitle">
                 <img
                   src={logo}

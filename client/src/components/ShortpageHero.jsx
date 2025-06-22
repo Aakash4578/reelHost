@@ -24,7 +24,7 @@ function ShortpageHero() {
 
   return (
     <>
-      <nav className={`${style.navbar} navbar-expand-lg d-flex align-items-center justify-content-center mt-5`}>
+      <nav className={`${style.navbar} navbar-expand-lg d-flex align-items-center justify-content-center mt-5`} >
         <a className={`${style.NavbarBrand}`} href="#">
           <img src={logo} alt="Logo" className="img-fluid" loading="lazy" />
         </a>
@@ -37,7 +37,7 @@ function ShortpageHero() {
           <br className="br" />
           that grabs attention and drives results.
         </p>
-        <a href="https://calendly.com/reeloxmedia/30min" className={style.button}>
+        <a href="https://calendly.com/reeloxmedia/30min" className={style.button} data-aos="fade-up">
   Book a 30-min call to Learn more
   <i className={`fas fa-arrow-right ${style.arrowIcon}`}></i>
 </a>

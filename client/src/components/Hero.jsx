@@ -15,7 +15,7 @@ const VideoGallery = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="container text-center mt-4">
-          <div className="video mt-4">
+          <div className="video mt-4" data-aos="flip-up">
 
             {videos.map(video =>(
                <iframe
@@ -37,13 +37,13 @@ const VideoGallery = () => {
               If you're a busy creator looking to grow your brand, we craft short-form <br />
               viral content that grabs attention and drives results.
             </p>
-            <a href="https://calendly.com/reeloxmedia/30min" className="btn mainbanerbtn mt-2">
+            <a href="https://calendly.com/reeloxmedia/30min" className="btn mainbanerbtn mt-2" data-aos="fade-up">
               Try our <span>FREE 30sec</span> Demo Edit <i className="fas fa-arrow-right"></i>
             </a>
           </div>
         </div>
       </section>
-      <div className="dividerunderline mt-4"></div>
+      <div className="dividerunderline mt-4" ></div>
     </>
   );
 };

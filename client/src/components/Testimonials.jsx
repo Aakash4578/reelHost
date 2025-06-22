@@ -67,7 +67,7 @@ function Testimonials() {
         </div>
 
         <div className="container tess py-5">
-          <div className="row d-flex">
+          <div className="row d-flex" data-aos="fade-up">
             {/* First Slider */}
             <div className="splide col-12 col-sm-6 col-md-4 mb-4" id="slider1">
               <div className="splide__track">

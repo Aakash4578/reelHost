@@ -7,7 +7,7 @@ const UgcVideoManager = () => {
   const [formData, setFormData] = useState({ title: '', youtubeId: '', _id: '' });
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const API_URL = `${API}http://localhost:5000/api/ugcpage`;
+  const API_URL = `${API}/api/ugcpage`;
 
   useEffect(() => {
     fetchVideos();

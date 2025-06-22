@@ -7,8 +7,8 @@ function DemoAndBook_Cards() {
   return (
     <>
       <Heading />
-      <div className="container-fluid py-3 d-flex justify-content-center">
-        <div className={`row w-100 ${style['card-container']}`}>
+      <div className="container-fluid py-3 d-flex justify-content-center" data-aos="fade-up">
+        <div className={`row w-100 ${style['card-container']}`} >
           <div className="col-lg-4 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
             <div className={style.card}>
               <div className={style.icon}>

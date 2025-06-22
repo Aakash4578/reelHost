@@ -20,8 +20,8 @@ function Footer() {
   return (
     <>
       <footer className="footer">
-        <div className="container">
-          <div className="row">
+        <div className="container" >
+          <div className="row" data-aos="fade-up">
             {/* Left Column */}
             <div className="col-lg-7 col-md-7">
               <div className="d-flex justify-content-center justify-content-md-start mb-2">

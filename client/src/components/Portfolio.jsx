@@ -128,14 +128,14 @@ function Portfolio() {
     <div className="container mt-5" id="port">
       {/* Heading */}
       <div className="text-center mb-5">
-        <div className="tite">Portfolio</div>
-        <h2 className="mt-4">
+        <div className="tite"  data-aos="fade-up">Portfolio</div>
+        <h2 className="mt-4"  data-aos="fade-up">
           See How Creativity Meets Quality <br /> to Deliver <strong>Exceptional Results.</strong>
         </h2>
       </div>
 
       {/* Category Filter Buttons */}
-      <div className="category-buttons mb-4">
+      <div className="category-buttons mb-4"  data-aos="fade-up" >
         {categories.map(cat => (
           <button
             key={cat._id}
@@ -148,12 +148,12 @@ function Portfolio() {
       </div>
 
       {/* Videos Grid */}
-      <div className="row portfolio-items">
+      <div className="row portfolio-items" >
         {filteredVideos.length === 0 && (
           <p className="text-center">No videos found.</p>
         )}
         {filteredVideos.map(video => (
-          <div key={video._id} className="col-lg-3 col-md-4 col-sm-6 portfolio-item short-form show">
+          <div key={video._id} className="col-lg-3 col-md-4 col-sm-6 portfolio-item short-form show"  data-aos="fade-up">
             <div className="video-container">
               {/* Iframe with id for YT API */}
               <div id={`player-${video._id}`}></div>

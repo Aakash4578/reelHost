@@ -8,7 +8,7 @@ function Heading() {
   }, []);
   return (
     <section>
-      <div className="containerheading" >
+      <div className="containerheading" data-aos="fade-up">
         <span className="emoji">🚀</span>
         <h2 className="text">
           Fuel your <span className="highlight-green">growth</span> with <br /> high-quality

@@ -22,9 +22,9 @@ function Faq() {
   }, []);
 
   return (
-    <section id="faq" className="container faqsec">
-      <div className="row">
-        <div className="col-12" data-aos="fade-up">
+    <section id="faq" className="container faqsec" >
+      <div className="row" data-aos="fade-up">
+        <div className="col-12" >
           {faqList.map((faq, index) => (
             <details key={index} className="details">
               <summary>

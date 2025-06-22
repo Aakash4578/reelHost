@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Modal, Button, Form } from 'react-bootstrap';
 import API from '../../api'; //✅ import your base API URL//
 
-const API_URL = `${API}http://localhost:5000/api/shortvideos`;
+const API_URL = `${API}/api/shortvideos`;
 
 function ShortVideoManager() {
   const [videos, setVideos] = useState([]);
