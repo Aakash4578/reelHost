@@ -5,18 +5,18 @@ import Footer from './components/Footer';
 function Terms() {
   return (
     <>
-    <div className={styles.termsPage}>
+    <div className={styles.termsPage} >
       {/* Hero Section */}
      <div className={`container-fluid ${styles.hero}`}>
-  <div className="container text-start">
-    <h1 className={styles.termsTitle}>Terms & Conditions</h1>
+  <div className="container text-start"  data-aos="fade-up">
+    <h1 className={styles.termsTitle} >Terms & Conditions</h1>
     <h5 className={styles.termsTitlep}>Please read before proceeding.</h5>
   </div>
 </div>
 
 
       {/* Content Section */}
-      <div className={`container `}>
+      <div className={`container `} data-aos="fade-up">
         <div className="row ">
           <div className="col-1"></div>
           <div className="col-10">
@@ -49,7 +49,7 @@ function Terms() {
                 <h6>9. Changes to Terms</h6>
                 <p>We reserve the right to modify these terms at any time...</p>
 
-                <h5 className={styles.termsTitlefroter}>For any questions, please reach out to our support team through the contact page.</h5>
+                <h5 className={styles.termsTitlefroter}  data-aos="fade-up">For any questions, please reach out to our support team through the contact page.</h5>
               </div>
             </div>
           </div>

@@ -10,7 +10,7 @@ function ProcessPage() {
 
 
         <div className={`container-fluid ${styles.hero}`}>
-  <div className="container text-start">
+  <div className="container text-start"  data-aos="fade-up">
     <h1 className={styles.termsTitle}>Video Editing Process</h1>
     <h5 className={styles.termsTitlep}>
       Simple. Creative. Professional.
@@ -19,7 +19,7 @@ function ProcessPage() {
 </div>
 
     
-     <div className={`${styles.timeline}`}>
+     <div className={`${styles.timeline}`}  data-aos="fade-up">
 <div className={`${styles.container1} ${styles.leftcontainer}`}>
       <img src="/public/ficon.webp" alt=""/>
         <div className={`${styles.textbox}`}>

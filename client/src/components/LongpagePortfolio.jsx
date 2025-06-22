@@ -45,7 +45,7 @@ function LongpagePortfolio() {
 
   return (
     <section className={`${style.portfolioSection} container py-3`}>
-      <div className="tite mb-4">Portfolio</div>
+      <div className="tite mb-4" data-aos="fade-up">Portfolio</div>
       <div className="row g-4">
         {videos.map((video, index) => (
           <div
@@ -87,9 +87,9 @@ function LongpagePortfolio() {
         ))}
       </div>
 
-      <div className="text-center mt-3">
+      <div className="text-center mt-3" >
         {!showAll && (
-          <button onClick={handleSeeAllClick} className={style.button}>
+          <button onClick={handleSeeAllClick} className={style.button} >
             See All
           </button>
         )}

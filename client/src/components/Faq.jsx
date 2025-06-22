@@ -23,10 +23,10 @@ function Faq() {
 
   return (
     <section id="faq" className="container faqsec" >
-      <div className="row" data-aos="fade-up">
+      <div className="row"  data-aos="fade-up">
         <div className="col-12" >
           {faqList.map((faq, index) => (
-            <details key={index} className="details">
+            <details key={index} className="details" >
               <summary>
                 <span>{faq.question}</span>
                 <span className="icon">+</span>

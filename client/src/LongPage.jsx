@@ -17,7 +17,7 @@ function LongPage() {
     
     <LongpageHero/>
     <LongpagePortfolio/>
-    <DemoAndBook_Cards />
+    <DemoAndBook_Cards/>
     <Testimonials/>
     <Candly/>
     <Faq/>

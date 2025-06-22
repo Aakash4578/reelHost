@@ -34,12 +34,12 @@ const UGCShortPagePortfolio = () => {  // <-- fixed function declaration
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  if (loading) return <div className="text-center my-4">Loading videos...</div>;
+  if (loading) return <div className="text-center my-4"  data-aos="fade-up">Loading videos...</div>;
   if (error) return <div className="text-center my-4 text-danger">{error}</div>;
 
   return (
     <section className={`${style.portfolioSection} container py-3`}>
-      <div className="tite mb-4">Portfolio</div>
+      <div className="tite mb-4"  data-aos="fade-up">Portfolio</div>
       <div className="row g-4">
         {videos.map((video, index) => {
           if (!showAll && index >= 3) return null; // only show first 3 if showAll is false
