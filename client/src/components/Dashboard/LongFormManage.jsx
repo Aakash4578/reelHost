@@ -8,7 +8,7 @@ function VideoManager() {
   const [editingId, setEditingId] = useState(null);
 
   const fetchVideos = async () => {
-    const res = await axios.get(`${Api}/api/longpage`);
+    const res = await axios.get(`${API}/api/longpage`);
     setVideos(res.data);
   };
 
@@ -30,7 +30,7 @@ function VideoManager() {
   };
 
   const deleteVideo = async (id) => {
-    await axios.delete(`${Api}/api/longpage/${id}`);
+    await axios.delete(`${API}/api/longpage/${id}`);
     fetchVideos();
   };
 
