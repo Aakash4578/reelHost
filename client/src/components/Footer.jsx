@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import logo from '/assets/img/logo/logo.png';
 import API from '../api';
 function Footer() {
@@ -51,12 +52,13 @@ function Footer() {
                 <div className="col-6">
                   <h5 className="footer-title">Information</h5>
                   <ul className="list-unstyled">
-                    <li><a href="#port">Portfolio</a></li>
-                    <li><a href="#tes">Testimonials</a></li>
-                    <li><a href="#pri">Pricing</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#candly">Contact Us</a></li>
-                    <li><a href="/trems">Terms & Conditions</a></li>
+                    <li><a href="#portfolio" onClick={() => scrollToSection('portfolio')}>Portfolio</a></li>
+                    <li><a href="#tes" onClick={() => scrollToSection('tes')}>Testimonials</a></li>
+
+                    <li><Link to="/pricing">Pricing</Link></li>
+                    <li><Link to="/#faq">FAQ</Link></li>
+                    <li><a href="#candly" >Contact Us</a></li>
+                    <li><Link to="/trems">Terms & Conditions</Link></li>
                   </ul>
                 </div>
                 <div className="col-6">

@@ -386,23 +386,74 @@ body {
       margin-top: 50px;
   } 
   
-  .tite {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text-color);
-      text-transform: uppercase;
-      padding: 10px 20px;
-      border: 1px solid #fdfdfd;
-      border-radius: 7px;
-      display: inline-block;
-      animation: glow 1.5s infinite alternate;
-  }
+      :root {
+  --m: 1.5rem;
+
+  --red: #510086;
+  --pink: #FF64F9;
+  --purple: #6B5FFF;
+  --blue: #4D8AFF;
+  --green: #5BFF89;
+  --yellow: #FFEE55;
+  --orange: #FF6D1B;
+}
+
+.tite {
+  border: calc(0.08 * var(--m)) solid transparent;
+  position: relative;
+  color: #F3F3F3;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: var(--m);
+  border-radius: calc(0.7 * var(--m));
+  padding: calc(0.5 * var(--m)) calc(1 * var(--m));
+  display: inline-block;
+  justify-content: center;
   
-  /* Glow Animation */
-  @keyframes glow {
-      0% { box-shadow: 0 0 5px #fff; }
-      100% { box-shadow: 0 0 15px #fff; }
+  background:
+    linear-gradient(#121213, #121213),
+    linear-gradient(#121213 50%, rgba(18, 18, 19, 0.6) 80%, rgba(18, 18, 19, 0)),
+    linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+  background-origin: border-box;
+  background-clip: padding-box, border-box, border-box;
+  background-size: 200%;
+  animation: animate 2s infinite linear;
+}
+
+.tite::before {
+  content: '';
+  background: linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+  height: 30%;
+  width: 60%;
+  position: absolute;
+  bottom: -20%;
+  z-index: -5;
+  background-size: 200%;
+  animation: animate 2s infinite linear;
+  filter: blur(calc(0.8 * var(--m)));
+}
+
+.tite:hover,
+.tite:hover::before {
+  animation: animate 0.5s infinite linear;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0;
   }
+  100% {
+    background-position: 200%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  :root {
+    --m: 2rem;
+  }
+}
+
+  
+ 
   
   .proheading h2 {
       font-family: 'Montserrat', sans-serif;
@@ -786,191 +837,134 @@ body {
   
     /*end  */
     /* START TESTIMONIAL SEC */
-  .tess.container {
-  max-width: 1100px; 
-  display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-between;
-  gap: 20px;
-  padding: 20px;
-  opacity: 1;
-  overflow: hidden;
-  mask-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 10%, rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0) 100%);
-  }
-  .tess.container h3{
-  padding: 20px;
-  }
-  .tess .splide__slide {
-  margin-bottom: 10px;
-  opacity: 1;
-  transition: opacity 1s ease;   
-  }
-  .tess .splide {
-  width: 32%;
-  height: 80vh; 
-  display: flex;
-  justify-content: center; 
-  }
-  .tess .card {
-  background-color: #0d0d0d;
-  border: 1px solid #444444c6;
-  border-radius: 25px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   .tesmaindiv {
+  max-width: 1000px;       /* You can adjust as needed */
+  margin: 0 auto;           /* Center horizontally */
+  padding: 0 15px;          /* Some side padding for small screens */
+}
+
+.testimonial-slider {
   width: 100%;
-  height: fit-content;
-  
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonial-track {
+  display: flex;
+  width: max-content;
+  animation: scrollLoop 60s linear infinite;
+}
+
+.testimonial-item {
+  flex: 0 0 400px;
+  margin-right: 20px;
+}
+
+/* Smooth fading edges */
+.testimonial-slider::before,
+.testimonial-slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.testimonial-slider::before {
+  left: 0;
+  background: linear-gradient(to right, #000 0%, transparent 100%);
+}
+
+.testimonial-slider::after {
+  right: 0;
+  background: linear-gradient(to left, #000 0%, transparent 100%);
+}
+
+@keyframes scrollLoop {
+  0% {
+    transform: translateX(0%);
   }
-  .tess .profile-section {
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.testimonial-item {
+  flex: 0 0 400px;
+  margin-right: 20px;
+  height: 100%;
+}
+
+.cardtess {
+  background-color: #000000;
+  border: #444444c6 solid 1px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 20px;
+  height: 300px;
+  overflow: hidden; /* To prevent text overflow */
+}
+
+.testimonial-profile {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tessname {
+  font-size: 15px;
+  color: #fff;
+}
+
+.tessrole {
+  font-size: 13px;
+  color: #bbb;
+}
+.insta-icon i {
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.insta-icon:hover i {
+  transform: scale(1.1);
+}
+
+.review-text {
+  font-size: 15px;
   margin-top: 10px;
-  }
-  .tess .profile-pic {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 2px solid #ddd;
-  margin-right: 15px;
-  }
-  .tess .name {
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  text-align: left;
-  }
-  .tess .role {
-  font-size: 14px;
-  color: #d0c7c7;
-  }
-  .tess .review-text {
-  font-size: 14px;
   line-height: 1.6;
-  color: #d0c7c7;
-  margin-bottom: 15px;
-  }
-  .tess .section-heading {
-  text-align: center;
-  color: #fff;
-  margin-bottom: 30px;
-  font-size: 30px;
-  font-weight: bold;
-  }
-  /* done  */
-  @media (min-width: 768px) and (max-width: 992px){  
-  .tess.container{
-    max-width: 750px;
-  }
-  .tess #slider2 {
-  display: none;
-  }
-  
-  .tess .splide {
-    width: 33%; 
-  }
-  
-  .tess .profile-pic {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .tess .name {
-    font-size: 16px;
-  }
-  
-  .tess .review-text {
-    font-size: 15px;
-  }
-  
-  /* For tablets (max-width: 992px) */
-  @media (max-width: 992px) {
-    .tess .splide {
-      width: 48%;
-    }
-  
-    .tess .profile-pic {
-      width: 45px;
-      height: 45px;
-    }
-  
-    .tess .name {
-      font-size: 15px;
-    }
-  
-    .tess .review-text {
-      font-size: 14px;
-    }
-  }
-  }
-  /* done  */
-  @media  (min-width: 577px) and (max-width: 767px){  
-  .tess.container{
-    max-width: 500px;
-  }
-  .tess #slider2 {
-  display: none;
-  }
-  
-  .tess .splide {
-    width: 48%; 
-  }
-  
-  .tess .profile-pic {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .tess .name {
-    font-size: 12px;
-    text-align: left;
-  }
-  .tess .role {
-    font-size: 11px;
-    text-align: left;
-  }
-  
-  .tess .review-text {
-    font-size: 11px;
-    text-align: left;
-  }
-  
-  }
-  /* For mobiles (max-width: 576px) */
-  @media (max-width: 576px) {
-    /* Hide all sliders except the first one */
-    .tess #slider2,
-    .tess #slider3 {
-      display: none;
-    }
-  
-    .tess #slider1 {
-      display: block; /* Show only the first slider */
-      width: 100%; /* Full width for the visible slider */
-    }
-  
-    .tess .splide__slide {
-      width: 100%; /* Ensure the slide takes full width */
-    }
-  
-    .tess .profile-pic {
-      width: 35px;
-      height: 35px;
-    }
-  
-    .tess .name {
-      font-size: 13px;
-    }
-  
-    .tess .review-text {
-      font-size: 12px;
-    }
-    .tess{
-        width: 90%;
-    }
-  }
-  
-  
+  color: #ccc;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Show max 4 lines */
+  -webkit-box-orient: vertical;
+}
+.insta-icon {
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.insta-icon:hover {
+  color: #e1306c; /* Instagram pink */
+}
+
+
+    /*  */
+
+
   /*  */
   /* END TESTIMONAIL SEC  */
   

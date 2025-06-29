@@ -37,6 +37,8 @@ function App() {
         <Route path="/long-page" element={<><Navbar /><LongPage /><BacktoTop /></>} />
         <Route path="/UGCpage" element={<><Navbar /><UGCpage /><BacktoTop /></>} />
         <Route path="/#faq" element={<><Navbar /><MainPage /><BacktoTop /></>} />
+        <Route path="/#portfolio" element={<><Navbar /><MainPage /><BacktoTop /></>} />
+        <Route path="/#tes" element={<><Navbar /><MainPage /><BacktoTop /></>} />
         <Route path="/Process" element={<><Navbar /><ProcessPage /><BacktoTop /></>} />
         <Route path="/trems" element={<><Navbar /><Terms /><BacktoTop /></>} />
 

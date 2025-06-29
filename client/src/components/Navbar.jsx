@@ -95,6 +95,8 @@ function Navbar() {
         <Link to="/UGCpage">UGC</Link>
         <Link to="/#proces">Process</Link>
         <Link to="/#faq">FAQs</Link>
+        <Link to="/trems">Policies</Link>
+\
       </div>
     </>
   );

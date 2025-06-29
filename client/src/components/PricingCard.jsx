@@ -44,7 +44,7 @@ function PricingCard() {
 
   return (
     <>
-    <div className={`container ${style.prisec}`} id="pri">
+    <div className={`container ${style.prisec}`} id="pricing">
       <div className="row g-4" data-aos="fade-up">
         {/* Starter Pack */}
         <div className="col-md-4 col-sm-12">
