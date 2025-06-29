@@ -389,13 +389,13 @@ body {
       :root {
   --m: 1.5rem;
 
-  --red: #510086;
-  --pink: #FF64F9;
-  --purple: #6B5FFF;
-  --blue: #4D8AFF;
-  --green: #5BFF89;
-  --yellow: #FFEE55;
-  --orange: #FF6D1B;
+  --red: #aa00ff9a;
+  --pink: #8300c496;
+  --purple: #4d00a4a1;
+  --blue: #33007b9d;
+  --green: #33007ba6;
+  --yellow: #aa00ffa1;
+  --orange: #8300c4a4;
 }
 
 .tite {
@@ -432,10 +432,7 @@ body {
   filter: blur(calc(0.8 * var(--m)));
 }
 
-.tite:hover,
-.tite:hover::before {
-  animation: animate 0.5s infinite linear;
-}
+
 
 @keyframes animate {
   0% {
