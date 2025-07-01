@@ -32,10 +32,10 @@ function Testimonials() {
 
   return (
     <section className="text-white py-5">
-      <div className="container proheading text-center" id="tes" data-aos="fade-up">
+      <div className="container text-center" id="tes" data-aos="fade-up">
         <buttom className="tite">Testimonials</buttom>
           <h3 className="mt-4">
-            Words from Our <strong>Satisfied Clients.</strong>
+            Words from Our <strong className='Gradient'>Satisfied Clients.</strong>
           </h3>
         </div>
 <div className="testimonial-slider mt-5 tesmaindiv">

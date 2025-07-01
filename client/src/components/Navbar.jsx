@@ -93,10 +93,9 @@ function Navbar() {
         <Link to="/short-page">Short Page</Link>
         <Link to="/long-page">Long-From</Link>
         <Link to="/UGCpage">UGC</Link>
-        <Link to="/#proces">Process</Link>
+        <Link to="/Process">Process</Link>
         <Link to="/#faq">FAQs</Link>
         <Link to="/trems">Policies</Link>
-\
       </div>
     </>
   );

@@ -508,7 +508,7 @@ min-width: 100%;
 }
 .prisec .card ul {
   list-style: none;
-  padding-left: 15px;
+  
   font-size: 16px;      
 }
 .prisec .card ul li {
@@ -516,24 +516,27 @@ min-width: 100%;
   font-size: 16px;
 }
 .prisec .card ul .lii {
-  margin: 6px 0;
-  background-color: #111; /* black bg */
-  color: white;
-  padding: 10px 15px 10px 20px; /* left padding for space */
-  position: relative;
-  border-radius: 8px;
+  word-break: break-word;
+  white-space: normal;
+  box-sizing: border-box;
+  overflow-wrap: break-word; /* Extra safety */
 }
 
 
 .prisec .card ul .lii {
   margin: 6px 0;
-  background: #020024;
-  background: linear-gradient(268deg,rgba(0, 0, 0, 0) 39%, rgb(92, 92, 92) 100%);  color: white;
-
+  background: linear-gradient(268deg, rgba(0, 0, 0, 0) 39%, rgb(92, 92, 92) 100%);
+  color: white;
   padding: 10px 15px 10px 20px;
   position: relative;
   border-radius: 8px;
+
+  word-break: break-word;
+  white-space: normal;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
 }
+
 
 .prisec .card ul .lii::before {
   content: '';
@@ -731,34 +734,82 @@ text-align: right;
 }
 
 /*  */
-/* Extra Small Devices: 320px - 480px */
+/* 🌐 Base styles (already applied in your code) will work for mobile-first */
+
+/* 📱 Extra Small Devices (max 480px) */
 @media (max-width: 480px) {
-  .prisec {
-    padding: 0 10px;
-    max-width: 80%;
+.prisec {
+    max-width: 56%;
   }
 
   .prisec .card h2 {
-    font-size: 2.1rem;
+    font-size: 2.8rem;
   }
 
   .prisec .card .price {
-    font-size: 3.5rem;
+    font-size: 5.5rem;
   }
 
   .prisec .card ul {
-    font-size: 11px;
+    font-size: 18px;
   }
+  .prisec .card ul li{
+    font-size: 18px;
+  }
+
+  .prisec .card ul .lii {
+    font-size: 18 px;
+  }
+
 
   .prisec .card .hielite,
   .prisec .card .styledbutton {
     font-size: 14px;
-    padding: 10px;
+    padding: 8px;
   }
 
   .prisec .video-card {
-    padding: 10px;
+    padding: 12px;
     height: auto;
+  }
+
+  .hourlyrate {
+    font-size: 18px;
+  }
+
+  .hourlyrate span {
+    font-size: 11px;
+  }
+}
+
+/* 📱 Small Devices (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .prisec {
+    max-width: 50%;
+  }
+
+  .prisec .card h2 {
+    font-size: 3rem;
+  }
+
+  .prisec .card .price {
+    font-size: 6.2rem;
+  }
+
+  .prisec .card ul {
+    font-size: 20px;
+  }
+  .prisec .card ul li{
+    font-size: 20px;
+  }
+
+  .prisec .card ul .lii {
+    font-size: 20 px;
+  }
+
+  .prisec .card .hielite,
+  .prisec .card .styledbutton {
+    font-size: 15px;
   }
 
   .hourlyrate {
@@ -768,40 +819,36 @@ text-align: right;
   .hourlyrate span {
     font-size: 12px;
   }
-
-  .shape {
-    width: 20px;
-    height: 20px;
-  }
 }
 
-/* Small Devices: 481px - 767px */
-@media (min-width: 481px) and (max-width: 767px) {
+/* 💻 Medium Devices (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
   .prisec {
-    padding: 0 15px;
-    max-width: 60%; 
+    padding: 0 30px;
   }
 
   .prisec .card h2 {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
   }
 
   .prisec .card .price {
-    font-size: 3.5rem;
+    font-size: 3.3rem;
   }
 
   .prisec .card ul {
-    font-size: 18px;
+    font-size: 11px;
+  }
+  .prisec .card ul li {
+    font-size: 11px;
+  }
+
+  .prisec .card ul .lii {
+    font-size: 11px;
   }
 
   .prisec .card .hielite,
   .prisec .card .styledbutton {
-    font-size: 15px;
-  }
-
-  .prisec .video-card {
-    padding: 12px;
-    height: auto;
+    font-size: 16px;
   }
 
   .hourlyrate {
@@ -811,61 +858,12 @@ text-align: right;
   .hourlyrate span {
     font-size: 13px;
   }
-
-  .shape {
-    width: 25px;
-    height: 25px;
-  }
 }
 
-/* Medium Devices: 768px - 991px */
-@media (min-width: 768px) and (max-width: 991px) {
-  .prisec {
-    padding: 0 25px;
-    max-width: 80%;
-  }
-
-  .prisec .card h2 {
-    font-size: 1rem;
-  }
-
-  .prisec .card .price {
-    font-size: 2rem;
-  }
-
-  .prisec .card ul {
-    font-size: 7px;
-  }
-
-  .prisec .card .hielite,
-  .prisec .card .styledbutton {
-    font-size: 11px;
-  }
-
-  .prisec .video-card {
-    padding: 20px;
-    height: auto;
-  }
-
-  .hourlyrate {
-    font-size: 16px;
-  }
-
-  .hourlyrate span {
-    font-size: 11px;
-  }
-
-  .shape {
-    width: 30px;
-    height: 30px;
-  }
-}
-
-/* Large Devices: 992px - 1199px */
+/* 💻 Large Devices (992px - 1199px) */
 @media (min-width: 992px) and (max-width: 1199px) {
   .prisec {
-    padding: 0 35px;
-    max-width: 90%;
+    padding: 0 40px;
   }
 
   .prisec .card h2 {
@@ -873,42 +871,40 @@ text-align: right;
   }
 
   .prisec .card .price {
-    font-size: 3.1rem;
+    font-size: 3.5rem;
   }
 
   .prisec .card ul {
     font-size: 12px;
   }
-
-  .prisec .card .hielite,
-  .prisec .card .styledbutton {
-    font-size: 14px;
-  }
-
-  .prisec .video-card {
-    padding: 25px;
-    height: auto;
-  }
-
-  .hourlyrate {
-    font-size: 22px;
-  }
-
-  .hourlyrate span {
+  .prisec .card ul li {
     font-size: 12px;
   }
 
-  .shape {
-    width: 35px;
-    height: 35px;
+  .prisec .card ul .lii {
+    font-size: 12px;
+  }
+
+  .prisec .card .hielite,
+  .prisec .card .styledbutton {
+    font-size: 16px;
+  }
+
+  .hourlyrate {
+    font-size: 26px;
+  }
+
+  .hourlyrate span {
+    font-size: 14px;
   }
 }
 
-/* Extra Large Devices: 1200px+ */
+/* 🖥️ Extra Large Devices (1200px and above) */
 @media (min-width: 1200px) {
   .prisec {
     padding: 0;
-    max-width: 95%;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   .prisec .card h2 {
@@ -919,18 +915,17 @@ text-align: right;
     font-size: 4rem;
   }
 
-  .prisec .card ul {
-    font-size: 16px;
+  .prisec .card ul li {
+    font-size: 14px;
+  }
+
+  .prisec .card ul .lii {
+    font-size: 14px;
   }
 
   .prisec .card .hielite,
   .prisec .card .styledbutton {
     font-size: 17px;
-  }
-
-  .prisec .video-card {
-    padding: 30px;
-    height: 279px;
   }
 
   .hourlyrate {
@@ -939,11 +934,6 @@ text-align: right;
 
   .hourlyrate span {
     font-size: 15px;
-  }
-
-  .shape {
-    width: 40px;
-    height: 40px;
   }
 }
 

@@ -24,6 +24,7 @@ import Terms from './Terms';
 import AdminUpdateForm from './components/Dashboard/AdminUpdateForm';
 import Newadmin from './components/Dashboard/AdminRegister';
 import Newslettersubscribers from './components/Dashboard/Newslettersubscribers';
+import Candly from './components/Candly';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path="/#faq" element={<><Navbar /><MainPage /><BacktoTop /></>} />
         <Route path="/#portfolio" element={<><Navbar /><MainPage /><BacktoTop /></>} />
         <Route path="/#tes" element={<><Navbar /><MainPage /><BacktoTop /></>} />
+        <Route path="/#candly" element={<><Navbar /><MainPage /><BacktoTop /></>} />
         <Route path="/Process" element={<><Navbar /><ProcessPage /><BacktoTop /></>} />
         <Route path="/trems" element={<><Navbar /><Terms /><BacktoTop /></>} />
 

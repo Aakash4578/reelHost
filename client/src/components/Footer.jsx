@@ -54,10 +54,8 @@ function Footer() {
                   <ul className="list-unstyled">
                     <li><a href="#portfolio" onClick={() => scrollToSection('portfolio')}>Portfolio</a></li>
                     <li><a href="#tes" onClick={() => scrollToSection('tes')}>Testimonials</a></li>
-
-                    <li><Link to="/pricing">Pricing</Link></li>
+                    <li><a href="#candly" onClick={() => scrollToSection('candly')}>Contact Us</a></li>
                     <li><Link to="/#faq">FAQ</Link></li>
-                    <li><a href="#candly" >Contact Us</a></li>
                     <li><Link to="/trems">Terms & Conditions</Link></li>
                   </ul>
                 </div>
