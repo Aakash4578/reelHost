@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import styles from '../assets/Css/Testimonials.module.css'; // ✅ CSS module import
 
 function Testimonials() {
   useEffect(() => {
@@ -8,7 +9,7 @@ function Testimonials() {
   }, []);
 
   const testimonials = [
-   {
+    {
       quote: "Abu and his Team is a pro with motion graphics and bringing your videos to life. I had the pleasure of working with him on a 35 video training course and he absolutely crushed it. Highly recommend.",
       name: "Michael Lee",
       role: "Founder of Low Voltage Nation",
@@ -26,88 +27,59 @@ function Testimonials() {
       role: "YT Channel",
       avatar: "https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-female.png",
     },
-   
-   
   ];
 
   return (
     <section className="text-white py-5">
       <div className="container text-center" id="tes" data-aos="fade-up">
-        <buttom className="tite">Testimonials</buttom>
-          <h3 className="mt-4">
-            Words from Our <strong className='Gradient'>Satisfied Clients.</strong>
-          </h3>
-        </div>
-<div className="testimonial-slider mt-5 tesmaindiv">
-  <div className="testimonial-track">
-    {[...testimonials, ...testimonials].map((item, index) => (
-      <div className="testimonial-item" key={index}>
-        <div className="card cardtess text-white d-flex flex-column ">
+        <button className="tite">Testimonials</button>
+        <h3 className="mt-4">
+          Words from Our <strong className='Gradient'>Satisfied Clients.</strong>
+        </h3>
+      </div>
 
-          {/* TOP: Profile section */}
-          <div className="d-flex justify-content-between align-items-center testimonial-profile mb-2">
-            <div className="d-flex align-items-center">
-              <img
-                src={item.avatar}
-                alt=""
-                className="rounded-circle me-3"
-                style={{ width: "45px", height: "45px", objectFit: "cover" }}
-              />
-              <div className="profile-details">
-                <h6 className="tessname mb-0">{item.name}</h6>
-                <small className="tessrole">{item.role}</small>
+      <div className={`${styles['testimonial-slider']} mt-5 ${styles['tesmaindiv']}`}>
+        <div className={styles['testimonial-track']}>
+          {[...testimonials, ...testimonials].map((item, index) => (
+            <div className={styles['testimonial-item']} key={index}>
+              <div className={`card text-white d-flex flex-column ${styles.cardtess}`}>
+                <div className={`d-flex justify-content-between align-items-center ${styles['testimonial-profile']} mb-2`}>
+                  <div className="d-flex align-items-center">
+                    <img
+                      src={item.avatar}
+                      alt=""
+                      className="rounded-circle me-3"
+                      style={{ width: "45px", height: "45px", objectFit: "cover" }}
+                    />
+                    <div className={styles['profile-details']}>
+                      <h6 className={`${styles.tessname} mb-0`}>{item.name}</h6>
+                      <small className={styles.tessrole}>{item.role}</small>
+                    </div>
+                  </div>
+                  <a href="#" className={`text-light ${styles['insta-icon']}`}>
+                    <i className="bi bi-instagram fs-5"></i>
+                  </a>
+                </div>
+
+                <div className="divider mb-2" style={{ borderTop: "1px solid #444" }}></div>
+
+                <div className="flex-grow-1 d-flex flex-column justify-content-between">
+                  <p className={`${styles['review-text']} mb-3`}>{item.quote}</p>
+                  <div className="d-flex align-items-center">
+                    <div className="flex-grow-1" style={{ borderTop: "1px solid #444" }}></div>
+                    <div className="px-3 text-warning d-flex justify-content-center">
+                      {[...Array(5)].map((_, i) => (
+                        <i key={i} className="bi bi-star-fill mx-1" style={{ color: "#A586F9" }}></i>
+                      ))}
+                    </div>
+                    <div className="flex-grow-1" style={{ borderTop: "1px solid #444" }}></div>
+                  </div>
+                </div>
               </div>
             </div>
-            <a
-              href="#"
-              className="text-light insta-icon"
-              title="Instagram"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="bi bi-instagram fs-5"></i>
-            </a>
-          </div>
-
-          {/* Divider */}
-          <div className="divider mb-2" style={{ borderTop: "1px solid #444" }}></div>
-
-          {/* Quote section - fills remaining space */}
-          {/* Quote Section */}
-<div className="flex-grow-1 d-flex flex-column justify-content-between">
-  <p className="review-text mb-3">{item.quote}</p>
-
-  {/* Stars with divider */}
-  <div className="d-flex align-items-center">
-    {/* Left Line */}
-    <div className="flex-grow-1" style={{ borderTop: "1px solid #444" }}></div>
-
-    {/* Stars */}
-    <div className="px-3 text-warning d-flex justify-content-center">
-      {[...Array(5)].map((_, i) => (
-<i key={i} className="bi bi-star-fill mx-1" style={{ color: "#A586F9" }}></i>
-      ))}
-    </div>
-
-    {/* Right Line */}
-    <div className="flex-grow-1" style={{ borderTop: "1px solid #444" }}></div>
-  </div>
-</div>
-
-
+          ))}
         </div>
       </div>
-    ))}
-  </div>
-</div>
-
-
-
-
-
-
-
-
     </section>
   );
 }
