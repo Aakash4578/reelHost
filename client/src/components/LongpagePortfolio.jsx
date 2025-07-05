@@ -51,8 +51,7 @@ function LongpagePortfolio() {
       <div class="tite mb-4" data-aos="fade-up">Portfolio</div>
     </div>
   </div>
-</div>
-      <div className="row g-4">
+</div>      <div className="row g-4">
         {videos.map((video, index) => (
           <div
             key={video.id}

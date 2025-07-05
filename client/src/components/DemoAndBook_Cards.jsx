@@ -20,7 +20,7 @@ function DemoAndBook_Cards() {
                 Try our free demo video of 30sec-1min
               </p>
               <div className={style.vediobtn}>
-                <a href="#candly">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScZgvSwBW9wdgA77TNyCRn5LuK3Wwpdiggh1MmMFQmGqIBezQ/viewform?usp=sharing&ouid=112910023168989807147 " target='black_page'>
                   <button>Get your first edit</button>
                 </a>
               </div>
