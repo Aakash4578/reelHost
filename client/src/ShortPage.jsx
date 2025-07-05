@@ -5,24 +5,23 @@ import Heading from './components/Heading';
 import PricingCard from './components/PricingCard';
 import Testimonials from './components/Testimonials';
 import Candly from './components/Candly';
+import DemoAndBook_Cards from './components/DemoAndBook_Cards'
 import Faq from './components/Faq';
 import Footer from './components/Footer';
-// import './assets/Css/Shortpage.css';
-
+import './assets/Css/Mainpage.css';
 
 function ShortPage() {
   return (
     <>
-    <ShortpageHero></ShortpageHero>  
-    <ShortPagePortfolio></ShortPagePortfolio>
-    <Heading></Heading>
-    <PricingCard></PricingCard>
-    <Testimonials></Testimonials>
-    <Candly></Candly>
-    <Faq></Faq>
-    <Footer></Footer>
+    <ShortpageHero/>
+    <ShortPagePortfolio/>
+    <DemoAndBook_Cards/>
+    {/* <PricingCard/> */}
+    <Testimonials/>
+    <Candly/>
+    <Faq/>
+    <Footer/>
     </>
 )
 }
-
 export default ShortPage

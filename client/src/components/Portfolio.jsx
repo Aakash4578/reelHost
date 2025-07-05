@@ -99,7 +99,13 @@ function Portfolio() {
     <div className="container mt-5" id="portfolio">
       {/* Heading */}
       <div className="text-center mb-5">
-        <div className="tite" data-aos="fade-up">Portfolio</div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <div class="tite mb-4" data-aos="fade-up">Portfolio</div>
+    </div>
+  </div>
+</div>
         <h2 className="mt-4" data-aos="fade-up">
           See How Creativity Meets Quality <br /> to Deliver <strong className='Gradient'> Exceptional Results.</strong>
         </h2>

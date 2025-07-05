@@ -225,17 +225,10 @@ font-display: swap;
   margin-top: 50px;
 } 
 
-.tite {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--text-color);
-  text-transform: uppercase;
-  padding: 10px 20px;
-  border: 1px solid #fdfdfd;
-  border-radius: 7px;
-  display: inline-block;
-  animation: glow 1.5s infinite alternate;
-}
+/*  */
+
+
+/*  */
 .portfolioSection {
   margin-top: 20px;
   text-align: center;
@@ -583,7 +576,7 @@ margin-top: 20px;
 display: flex;
 }
 .hourlyrate {
-font-size: 30px;
+font-size: 10px;
 font-weight: bold;
 color: rgba(255, 255, 255, 0.618);
 
@@ -739,26 +732,26 @@ text-align: right;
 /* 📱 Extra Small Devices (max 480px) */
 @media (max-width: 480px) {
 .prisec {
-    max-width: 56%;
+    max-width: 70%;
   }
 
   .prisec .card h2 {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
   }
 
   .prisec .card .price {
-    font-size: 5.5rem;
+    font-size: 4.5rem;
   }
 
   .prisec .card ul {
-    font-size: 18px;
+    font-size: 13px;
   }
   .prisec .card ul li{
-    font-size: 18px;
+    font-size: 13px;
   }
 
   .prisec .card ul .lii {
-    font-size: 18 px;
+    font-size: 13 px;
   }
 
 
@@ -781,6 +774,33 @@ text-align: right;
     font-size: 11px;
   }
 }
+@media (max-width: 320px) {
+  .prisec {
+    max-width: 80% !important;
+  }
+
+  .prisec .card h2 {
+    font-size: 1.4rem !important;
+  }
+
+  .prisec .card .price {
+    font-size: 2.5rem !important;
+  }
+
+  .prisec .card ul li {
+    font-size: 9px !important;
+  }
+
+  .prisec .card .hielite,
+  .prisec .card .styledbutton {
+    font-size: 10px !important;
+    padding: 6px !important;
+  }
+
+  .hourlyrate {
+    font-size: 10px !important;
+  }
+}
 
 /* 📱 Small Devices (481px - 767px) */
 @media (min-width: 481px) and (max-width: 767px) {
@@ -789,27 +809,27 @@ text-align: right;
   }
 
   .prisec .card h2 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .prisec .card .price {
-    font-size: 6.2rem;
+    font-size: 5rem;
   }
 
   .prisec .card ul {
-    font-size: 20px;
+    font-size: 14px;
   }
   .prisec .card ul li{
-    font-size: 20px;
+    font-size: 14px;
   }
 
   .prisec .card ul .lii {
-    font-size: 20 px;
+    font-size: 14px;
   }
 
   .prisec .card .hielite,
   .prisec .card .styledbutton {
-    font-size: 15px;
+    font-size: 13px;
   }
 
   .hourlyrate {
@@ -828,11 +848,11 @@ text-align: right;
   }
 
   .prisec .card h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .prisec .card .price {
-    font-size: 3.3rem;
+    font-size: 3rem;
   }
 
   .prisec .card ul {
@@ -848,15 +868,15 @@ text-align: right;
 
   .prisec .card .hielite,
   .prisec .card .styledbutton {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .hourlyrate {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .hourlyrate span {
-    font-size: 13px;
+    font-size: 11px;
   }
 }
 
@@ -942,190 +962,7 @@ text-align: right;
 
 /* END PRICING SEC */
  /* START TESTIMONIAL SEC */
- .tess.container {
-  max-width: 1100px; 
-  display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-between;
-  gap: 20px;
-  padding: 20px;
-  opacity: 1;
-  overflow: hidden;
-  mask-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 10%, rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0) 100%);
-  }
-  .tess.container h3{
-  padding: 20px;
-  }
-  .tess .splide__slide {
-  margin-bottom: 10px;
-  opacity: 1;
-  transition: opacity 1s ease;   
-  }
-  .tess .splide {
-  width: 32%;
-  height: 80vh; 
-  display: flex;
-  justify-content: center; 
-  }
-  .tess .card {
-  background-color: #0d0d0d;
-  border: 1px solid #444444c6;
-  border-radius: 25px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  height: fit-content;
-  
-  }
-  .tess .profile-section {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-top: 10px;
-  }
-  .tess .profile-pic {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 2px solid #ddd;
-  margin-right: 15px;
-  }
-  .tess .name {
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  text-align: left;
-  }
-  .tess .role {
-  font-size: 14px;
-  color: #d0c7c7;
-  }
-  .tess .review-text {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #d0c7c7;
-  margin-bottom: 15px;
-  }
-  .tess .section-heading {
-  text-align: center;
-  color: #fff;
-  margin-bottom: 30px;
-  font-size: 30px;
-  font-weight: bold;
-  }
-  /* done  */
-  @media (min-width: 768px) and (max-width: 992px){  
-  .tess.container{
-    max-width: 750px;
-  }
-  .tess #slider2 {
-  display: none;
-  }
-  
-  .tess .splide {
-    width: 33%; 
-  }
-  
-  .tess .profile-pic {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .tess .name {
-    font-size: 16px;
-  }
-  
-  .tess .review-text {
-    font-size: 15px;
-  }
-  
-  /* For tablets (max-width: 992px) */
-  @media (max-width: 992px) {
-    .tess .splide {
-      width: 48%;
-    }
-  
-    .tess .profile-pic {
-      width: 45px;
-      height: 45px;
-    }
-  
-    .tess .name {
-      font-size: 15px;
-    }
-  
-    .tess .review-text {
-      font-size: 14px;
-    }
-  }
-  }
-  /* done  */
-  @media  (min-width: 577px) and (max-width: 767px){  
-  .tess.container{
-    max-width: 500px;
-  }
-  .tess #slider2 {
-  display: none;
-  }
-  
-  .tess .splide {
-    width: 48%; 
-  }
-  
-  .tess .profile-pic {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .tess .name {
-    font-size: 12px;
-    text-align: left;
-  }
-  .tess .role {
-    font-size: 11px;
-    text-align: left;
-  }
-  
-  .tess .review-text {
-    font-size: 11px;
-    text-align: left;
-  }
-  
-  }
-  /* For mobiles (max-width: 576px) */
-  @media (max-width: 576px) {
-    /* Hide all sliders except the first one */
-    .tess #slider2,
-    .tess #slider3 {
-      display: none;
-    }
-  
-    .tess #slider1 {
-      display: block; /* Show only the first slider */
-      width: 100%; /* Full width for the visible slider */
-    }
-  
-    .tess .splide__slide {
-      width: 100%; /* Ensure the slide takes full width */
-    }
-  
-    .tess .profile-pic {
-      width: 35px;
-      height: 35px;
-    }
-  
-    .tess .name {
-      font-size: 13px;
-    }
-  
-    .tess .review-text {
-      font-size: 12px;
-    }
-    .tess{
-        width: 90%;
-    }
-  }
-  
+ 
   
   /*  */
   /* END TESTIMONAIL SEC  */

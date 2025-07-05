@@ -41,9 +41,16 @@ function PricingCard() {
 
   const handleMouseEnter = (index) => setHoveredIndex(index);
   const handleMouseLeave = () => setHoveredIndex(null);
+const [isMonthly, setIsMonthly] = useState(true); // true = per month, false = per hour
 
   return (
     <>
+    <div className="text-center mb-4">
+  <button onClick={() => setIsMonthly(!isMonthly)} className="btn btn-danger">
+    Switch to {isMonthly ? 'Hourly' : 'Monthly'}
+  </button>
+</div>
+
     <div className={`container ${style.prisec}`} id="pri">
       <div className="row g-4" data-aos="fade-up">
         {/* Starter Pack */}
@@ -55,15 +62,18 @@ function PricingCard() {
           >
             <h2>Starter Pack</h2>
             <div className={style.price}>
-              $699
-              <div className={style.hourlyrate}>20$ <span>/hour</span></div>
-            </div>
+            {isMonthly ? '$699' : '$799'}
+            <div className={style.hourlyrate}>
+           {isMonthly ? '10videos' : '20$'}
+            <span>{isMonthly ? '/month' : '/hour'}</span>
+        </div>
+        </div>
             <div className={`${style.borderwrapper} ${style.clinkbtn}`}>
               <a href="#candly"><button className={style.styledbutton}>Get Started</button></a>
             </div>
             <p className={`text-md-start ${style.inclu}`}>What's included:</p>
             <ul>
-              <li className={style.lii}>Up to 30 hours/month</li>
+              <li className={style.lii}>{isMonthly ? 'Up to 30 hours' : 'hours'}</li>
               <li>Editor with 6+ years of experience</li>
               <li>Managed by Project Manager</li>
               <li>Motion Graphics included</li>

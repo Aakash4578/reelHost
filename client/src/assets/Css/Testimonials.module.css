@@ -4,23 +4,14 @@
   padding: 0 15px;
 }
 
-.testimonial-slider {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  white-space: nowrap; /* ✅ Prevent wrapping */
-}
-
-.testimonial-track {
-  display: flex;
-  animation: scrollLoop 60s linear infinite;
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
 }
 
 .testimonial-item {
-  flex: 0 0 400px;
-  margin-right: 20px;
-  height: 100%;
-  white-space: normal;
+  width: 100%;
 }
 
 .cardtess {
@@ -32,7 +23,8 @@
   justify-content: space-between;
   padding: 20px;
   border-radius: 20px;
-  height: 300px;
+  text-align: justify;
+  height: 250px;
   overflow: hidden;
 }
 
@@ -50,7 +42,16 @@
 .tessname {
   font-size: 15px;
   color: #fff;
+
 }
+
+
+
+.quoteIcon {
+  font-size: 30px;
+  font-weight: bold;
+}
+
 
 .tessrole {
   font-size: 13px;
@@ -90,47 +91,44 @@
   color: #e1306c;
 }
 
-.testimonial-slider::before,
-.testimonial-slider::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 200px;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-}
+/* Responsive for mobile */
+/* ✅ Default Layout (Large desktops) - No media query needed */
+/* .testimonial-grid {
+     grid-template-columns: repeat(2, 1fr);
+     gap: 30px;
+   }
+*/
 
-.testimonial-slider::before {
-  left: 0;
-  background: linear-gradient(to right, #000 0%, transparent 100%);
-}
-
-.testimonial-slider::after {
-  right: 0;
-  background: linear-gradient(to left, #000 0%, transparent 100%);
-}
-
-@keyframes scrollLoop {
-  0% {
-    transform: translateX(0%);
+/* ✅ Large Laptops & Desktops (Max width: 1200px) */
+@media screen and (max-width: 1200px) {
+   .tesmaindiv{
+    max-width: 90%;
   }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* ✅ Responsive Breakpoints */
-
-/* Tablets */
-@media screen and (max-width: 1024px) {
-  .testimonial-item {
-    flex: 0 0 350px;
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
   }
 
   .cardtess {
-    height: 280px;
+    height: 290px;
     padding: 18px;
+  }
+}
+
+/* ✅ Medium Devices (Tablets) - Max width: 992px */
+@media screen and (max-width: 992px) {
+   .tesmaindiv{
+    max-width: 80%;
+  }
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .cardtess {
+    height: 270px;
+    padding: 16px;
+    border-radius: 18px;
   }
 
   .review-text {
@@ -139,17 +137,20 @@
   }
 }
 
-/* Mobile Devices */
+/* ✅ Small Tablets and Large Phones - Max width: 768px */
 @media screen and (max-width: 768px) {
-  .testimonial-item {
-    flex: 0 0 300px;
-    margin-right: 15px;
+   .tesmaindiv{
+    max-width: 80%;
+  }
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .cardtess {
-    height: 250px;
-    padding: 16px;
-    border-radius: 15px;
+    height: auto;
+    padding: 15px;
+    border-radius: 16px;
   }
 
   .review-text {
@@ -168,29 +169,50 @@
   .insta-icon {
     font-size: 16px;
   }
-
-  .testimonial-slider::before,
-  .testimonial-slider::after {
-    width: 100px;
-  }
 }
 
-/* Extra small phones */
-@media screen and (max-width: 480px) {
-  .testimonial-item {
-    flex: 0 0 250px;
-    margin-right: 10px;
+/* ✅ Small Phones - Max width: 576px */
+@media screen and (max-width: 576px) {
+   .tesmaindiv{
+    max-width: 80%;
+  }
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
 
   .cardtess {
-    height: 220px;
     padding: 14px;
-    border-radius: 12px;
+    border-radius: 14px;
   }
 
   .review-text {
     font-size: 12px;
     -webkit-line-clamp: 2;
+  }
+
+  .insta-icon {
+    font-size: 15px;
+  }
+}
+
+/* ✅ Extra Small Phones - Max width: 480px */
+@media screen and (max-width: 480px) {
+   .tesmaindiv{
+    max-width: 80%;
+  }
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cardtess {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .review-text {
+    font-size: 12px;
   }
 
   .tessname {
@@ -202,11 +224,40 @@
   }
 
   .insta-icon {
-    font-size: 15px;
-  }
-
-  .testimonial-slider::before,
-  .testimonial-slider::after {
-    width: 80px;
+    font-size: 14px;
   }
 }
+
+/* ✅ Ultra Small Devices - Max width: 320px */
+@media screen and (max-width: 320px) {
+  .tesmaindiv{
+    max-width: 80%;
+  }
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cardtess {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .review-text {
+    font-size: 11px;
+    -webkit-line-clamp: 2;
+  }
+
+  .tessname {
+    font-size: 12px;
+  }
+
+  .tessrole {
+    font-size: 10px;
+  }
+
+  .insta-icon {
+    font-size: 13px;
+  }
+}
+

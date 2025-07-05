@@ -80,7 +80,7 @@ body {
   }
   
   .navbar-nav .nav-item {
-    padding: 0px 10px;
+    padding: 0px 5px;
   }
   
   .navbar-nav .nav-link:hover {
@@ -403,15 +403,19 @@ body {
 }
 
 .tite {
+  width: 220px;                 /* ✅ Fixed width */
+  height: auto;
   border: solid transparent 4px;
   position: relative;
   color: #F3F3F3;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 18px;
   border-radius: 15px;
-  padding: 15px 25px;
-  display: inline-block;
+  padding: 10px 25px;
+  display: flex;                /* ✅ Center content */
   justify-content: center;
+  align-items: center;
+  text-align: center;
 
   background:
     linear-gradient(#121213, #121213),
@@ -421,6 +425,10 @@ body {
   background-clip: padding-box, border-box, border-box;
   background-size: 200%;
   animation: animate 2s infinite linear;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .tite::before {
@@ -433,7 +441,7 @@ body {
   z-index: -5;
   background-size: 200%;
   animation: animate 2s infinite linear;
-  filter: blur(10px); /* default blur size */
+  filter: blur(10px);
 }
 
 @keyframes animate {
@@ -445,44 +453,24 @@ body {
   }
 }
 
-/* ✅ Responsive Media Queries */
+/* ✅ Responsive width if needed */
 
-/* Tablets */
-@media screen and (max-width: 1024px) {
+@media (max-width: 768px) {
   .tite {
-    font-size: 16px;
-    padding: 12px 20px;
-    border-radius: 12px;
-  }
-  .tite::before {
-    filter: blur(8px);
-  }
-}
-
-/* Small tablets & large phones */
-@media screen and (max-width: 768px) {
-  .tite {
+    width: 180px;
     font-size: 14px;
-    padding: 10px 18px;
-    border-radius: 10px;
-  }
-  .tite::before {
-    filter: blur(6px);
+    padding: 10px 20px;
   }
 }
 
-/* Phones */
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
   .tite {
+    width: 160px;
     font-size: 12px;
-    padding: 8px 15px;
-    border-radius: 8px;
-    text-align: center;
-  }
-  .tite::before {
-    filter: blur(4px);
+    padding: 8px 16px;
   }
 }
+
    /* portfolio */
       .portfolio-section {
           text-align: center;

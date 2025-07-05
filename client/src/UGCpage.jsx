@@ -5,21 +5,24 @@ import Candly from './components/Candly';
 import Faq from './components/Faq';
 import Footer from './components/Footer';
 import UGCShortPagePortfolio from './components/UGCShortPagePortfolio';
-// import './assets/Css/Shortpage.css';
-  import DemoAndBook_Cards from './components/DemoAndBook_Cards'
-import './assets/Css/Mainpage.css';
+import DemoAndBook_Cards from './components/DemoAndBook_Cards'
+import PricingCard from './components/PricingCard';
+import Heading from './components/Heading';
+
+
 
 
 function UGCpage() {
   return (
   <>
-  <UGCHero></UGCHero>
-  <UGCShortPagePortfolio></UGCShortPagePortfolio>
-  <DemoAndBook_Cards></DemoAndBook_Cards>
-    <Testimonials></Testimonials>
-    <Candly></Candly>
-    <Faq></Faq>
-    <Footer></Footer>
+    <UGCHero/>
+    <UGCShortPagePortfolio/>
+    {/* <PricingCard/> */}
+     <DemoAndBook_Cards />
+    <Testimonials/>
+    <Candly/>
+    <Faq/>
+    <Footer/>
 
   </>
   )

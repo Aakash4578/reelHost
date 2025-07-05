@@ -39,7 +39,13 @@ const UGCShortPagePortfolio = () => {  // <-- fixed function declaration
 
   return (
     <section className={`${style.portfolioSection} container py-3`}>
-      <div className="tite mb-4"  data-aos="fade-up">Portfolio</div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <div class="tite mb-4" data-aos="fade-up">Portfolio</div>
+    </div>
+  </div>
+</div>
       <div className="row g-4">
         {videos.map((video, index) => {
           if (!showAll && index >= 3) return null; // only show first 3 if showAll is false

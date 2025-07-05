@@ -56,7 +56,7 @@ function Footer() {
                     <li><a href="#tes" onClick={() => scrollToSection('tes')}>Testimonials</a></li>
                     <li><a href="#candly" onClick={() => scrollToSection('candly')}>Contact Us</a></li>
                     <li><Link to="/#faq">FAQ</Link></li>
-                    <li><Link to="/trems">Terms & Conditions</Link></li>
+                    <li><Link to="/trems">Terms</Link></li>
                   </ul>
                 </div>
                 <div className="col-6">

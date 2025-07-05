@@ -36,7 +36,7 @@
   }
   
   .card-container .card p {
-    font-size: 1rem;
+    font-size: 14px;
     color: #b0b0b0;
     line-height: 1.5;
   }
@@ -124,4 +124,170 @@
       font-size: 0.85rem;
     }
   }
-  
+  /*  */
+
+  .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch; /* ✅ Makes all items same height */
+  gap: 20px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  max-width: 1000px;
+}
+
+.card-wrapper {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  background-color: transparent;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: justify;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  width: 100%;
+  max-width: 350px;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* ✅ ensures equal height inside wrapper */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ... your remaining styles ... */
+
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card-wrapper {
+    width: 100%;
+    max-width: 90%;
+  }
+}
+
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #b0b0b0;
+  line-height: 1.5;
+}
+
+.icon img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+button {
+  display: block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  width: 100%;
+  background-color: var(--btn-bgshape);
+  color: var(--text-color);
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: none;
+  box-shadow: 2px 1px 3px 0.1px #000000d2, inset 2px 4px 5px 0.1px #00000057;
+  border: 0.3px solid rgba(152, 152, 152, 0.683);
+  transition: all 0.3s ease;
+}
+
+.vediobtn,
+.vediobtn2 {
+  background-color: var(--btn-bgshape) !important;
+  padding: 5px 6px;
+  border-radius: 9px;
+  box-shadow: 0 0 10px #000000d2 !important;
+  border: 0.1px solid rgba(58, 58, 58, 0.683);
+  width: 100%;
+  text-align: center;
+}
+
+.vediobtn a,
+.vediobtn2 a {
+  text-decoration: none;
+}
+
+.Getbtn:hover {
+  background-color: var(--videocardbtn-hover-color);
+  box-shadow: 0 0 15px 4px rgba(202, 111, 255, 0.8), inset 2px 4px 5px 0.1px #00000057;
+  color: var(--text-color);
+  border-color: rgba(152, 152, 152, 0.9);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .card {
+    max-width: 90%;
+    padding: 15px;
+  }
+  .card h3 {
+    font-size: 1.3rem;
+  }
+  .card p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  .card {
+    max-width: 100%;
+    padding: 12px;
+  }
+  .card h3 {
+    font-size: 1.2rem;
+  }
+  .card p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .card-container {
+    padding: 8px;
+  }
+  .card {
+    padding: 10px;
+    max-width: 100%;
+  }
+  .card h3 {
+    font-size: 1.1rem;
+  }
+  .card p {
+    font-size: 0.8rem;
+  }
+  button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
