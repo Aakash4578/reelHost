@@ -61,7 +61,7 @@ function Testimonials() {
           Words from Our <strong className="Gradient">Satisfied Clients.</strong>
         </h3>
       </div>
-<div className={`${styles['tesmaindiv']} mt-5`}>
+<div className={`${styles['tesmaindiv']} mt-5`} data-aos="fade-up">
   <div className={styles['testimonial-grid']}>
     {testimonials.map((item, index) => (
       <div className={styles['testimonial-item']} key={index}>
