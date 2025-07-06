@@ -607,7 +607,7 @@ body {
 /* Mobile screens (480px and below) */
 @media (max-width: 480px) {
   .portfolio-item {
-    width: calc(50% - 10px);  }
+    width: calc(80% - 10px);  }
 
   .longitnes {
     width: 100% !important;
